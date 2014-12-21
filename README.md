@@ -15,11 +15,11 @@ Unzip files to your R working directory.
 Copy file run_analysis.R to your R working directory.   
 
 In RStudio:  
- setwd("your R workiking directory")  
- source("run_analysis.R")  
+ _setwd("your R workiking directory")_  
+ _source("run_analysis.R")_  
 
 Reading data:  
- data <- read.table("./final_data_set.txt")  
+ _data <- read.table("./final_data_set.txt")_  
 
 It is 180x68 because there are 30 subjects and 6 activities, thus for each activity and each subject we got 30x6 = 180 rows.
 And we got 66 measurements on the mean and standard deviation for each measurement + subject_id + activity name.
