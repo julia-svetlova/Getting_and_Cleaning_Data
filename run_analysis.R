@@ -1,6 +1,7 @@
 ##Getting and cleaning data
 
 # Source of data for this project: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+# Unzip it to your R working directory
 
 # This R script does the following:
 
@@ -35,10 +36,15 @@ subject<-setNames(subject,"subject")
 
 data<-cbind(subject,y,X)
 
-# 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+# 5. From the data set in step 4, creates a second, independent tidy data set with the average 
+# of each variable for each activity and each subject.
+
+# First installing dplyr package if not installed yet.
 if("dplyr" %in% rownames(installed.packages()) == FALSE) {install.packages("dplyr")}
 library(dplyr)
 
 avg_data<-group_by(data,subject,activity)
 avg_data<-summarise_each(avg_data,funs(mean))
+
+# Writing data to your R working directory final_data_set.txt file.
 write.table(avg_data, "./final_data_set.txt", row.name=FALSE)
