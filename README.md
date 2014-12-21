@@ -15,8 +15,9 @@ Unzip files to your R working directory.
 Copy file run_analysis.R to your R working directory.
 
 In RStudio: 
->setwd("your R workiking directory")
->>source("run_analysis.R")
+> setwd("your R workiking directory")
+
+> source("run_analysis.R")
 
 Reading data:
 >data <- read.table("./final_data_set.txt")
